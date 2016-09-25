@@ -113,13 +113,13 @@ private mutating func setByIndex(_ index: Int) -> Int {
 
 下图说明了上述过程。首先树如下所示：
 
-![before_find](images/BeforeFind.png)
+![before_find](Images/BeforeFind.png)
 
 我们调用`setOf(4)`，为了找到根节点，必须先经过节点`2`和节点`7`。
 
 在调用的过程中，树被重新组织成下图所示：
 
-![after_find](images/AfterFind.png)
+![after_find](Images/AfterFind.png)
 
 现在如果我们需要再一次调用`setOf(4)`的话，我们不必再先经过节点2而到跟节点了，所以可以看到， Union-Find结构是自我优化的，非常棒。
 
@@ -167,11 +167,11 @@ mutating func unionSetsContaining(_ firstElement: T, and secondElement: T) {
 
 用图示表示这个过程。下图表示在合并前的两个树：
 
-![before_union](images/BeforeUnion.png)
+![before_union](Images/BeforeUnion.png)
 
 我们调用`unionSetsContaining(4, and 3)`。更小的树被作为子树加到来大树上：
 
-![after_union](images/AfterUnion.png)
+![after_union](Images/AfterUnion.png)
 
 注意到由于我们首先调用了`setOf`，更大的树也被优化了——节点`3`被直接连接到了根节点底下。
 
